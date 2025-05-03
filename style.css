@@ -793,3 +793,18 @@ to {
   .nav-links.active {
     display: flex;
   }
+  #clap{
+    color: black;
+  }
+  #names{
+    color: black;
+  }
+  #emails{
+    color: black;
+  }
+  #subjects{
+    color: black;
+  }
+  #messages{
+    color: black;
+  }
