@@ -343,9 +343,19 @@ section:first-of-type {
   border-color: var(--secondary);
   box-shadow: 0 0 0 2px rgba(6, 182, 212, 0.2);
 }
-budget{
+#budget{
   color : black;
 }
+#email{
+  color : black ;
+}
+#nom{
+  color : black ;
+}
+#subject{
+  color : black ;
+  {
+
 
 /* Grid System */
 .grid {
