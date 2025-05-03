@@ -279,31 +279,33 @@
                         <div class="md:col-span-3">
                             <div class="bg-gray-900/70 backdrop-blur-lg border border-indigo-500/20 p-6 rounded-xl shadow-xl">
                                 <div class="text-xl font-medium text-white mb-4">Envoie un message</div>
-                                <formaction="https://formspree.io/f/meogeger" method="post">
+                                <form action="https://formspree.io/f/meogeger" method="post">
                                     <div class="grid md:grid-cols-2 gap-4 mb-4">
-                                        <div>
-                                            <label for="name" class="block text-sm text-gray-400 mb-1">Nom</label>
-                                            <input type="text" id="name" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
+
+                                          <div>
+                                            <label for="name" class="block text-sm text-gray-400 mb-1">Name</label>
+                                            <input type="text" id="names" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
                                         </div>
                                         <div>
                                             <label for="email" class="block text-sm text-gray-400 mb-1">Email</label>
-                                            <input type="email" id="email" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
+                                            <input type="email" id="emails" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
                                         </div>
                                     </div>
                                     <div class="mb-4">
-                                        <label for="subject" class="block text-sm text-gray-400 mb-1">Object</label>
-                                        <input type="text" id="subject" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
+                                        <label for="subject" class="block text-sm text-gray-400 mb-1">Subject</label>
+                                        <input type="text" id="subjects" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors">
                                     </div>
                                     <div class="mb-6">
                                         <label for="message" class="block text-sm text-gray-400 mb-1">Message</label>
-                                        <textarea id="message" rows="4" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors resize-none"></textarea>
+                                        <textarea id="messages" rows="4" class="w-full bg-gray-800/50 border border-gray-700 focus:border-cyan-500 rounded-lg py-2 px-3 text-white focus:outline-none focus:ring-1 focus:ring-cyan-500/50 transition-colors resize-none"></textarea>
                                     </div>
                                     <div class="relative group">
                                         <div class="absolute -inset-0.5 bg-gradient-to-r from-indigo-600/50 to-purple-600/50 rounded-lg blur opacity-75 group-hover:opacity-100 transition-all duration-500"></div>
                                         <button type="submit" class="w-full px-6 py-3 bg-gradient-to-r from-indigo-900/90 to-purple-900/90 rounded-lg text-white text-base font-medium relative z-10 flex items-center justify-center gap-2 group-hover:from-indigo-800/90 group-hover:to-purple-800/90 transition-all duration-300">
-                                            <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">Envoyer</span>
+                                            <span class="bg-gradient-to-r from-cyan-300 to-indigo-300 bg-clip-text text-transparent">Send Message</span>
                                         </button>
                                     </div>
+                                       
                                 </form>
                             </div>
                         </div>
