@@ -216,54 +216,8 @@
               </div>
             </div>
           </section>
-       <div id="chatbot">
-  <div id="chatbot-header">🤖 Assistant IA</div>
-  <div id="chat-history"></div>
-  <div id="chat-input">
-    <input type="text" id="user-input" placeholder="Écrivez votre message..." />
-    <button id="send-btn">Envoyer</button>
-  </div>
-</div>
+   
 
-<script>
-  const chatHistory = document.getElementById("chat-history");
-  const userInput = document.getElementById("user-input");
-  const sendBtn = document.getElementById("send-btn");
-
-  async function sendMessage() {
-    const message = userInput.value.trim();
-    if (message === "") return;
-
-    addMessage("Vous", message);
-    userInput.value = "";
-
-    try {
-      const response = await fetch("http://www.aryus-ia.42web.io	", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ message })
-      });
-
-      const data = await response.json();
-      const botReply = data.choices[0].message.content;
-      addMessage("IA", botReply);
-    } catch (error) {
-      addMessage("IA", "❌ Erreur de connexion au serveur.");
-      console.error(error);
-    }
-  }
-
-  function addMessage(sender, text) {
-    const msg = document.createElement("div");
-    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
-    chatHistory.appendChild(msg);
-    chatHistory.scrollTop = chatHistory.scrollHeight;
-  }
-
-  sendBtn.addEventListener("click", sendMessage);
-  userInput.addEventListener("keypress", function (e) {
-    if (e.key === "Enter") sendMessage();
-  });
 </script>
 
 
