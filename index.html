@@ -216,6 +216,56 @@
               </div>
             </div>
           </section>
+       <div id="chatbot">
+  <div id="chatbot-header">🤖 Assistant IA</div>
+  <div id="chat-history"></div>
+  <div id="chat-input">
+    <input type="text" id="user-input" placeholder="Écrivez votre message..." />
+    <button id="send-btn">Envoyer</button>
+  </div>
+</div>
+
+<script>
+  const chatHistory = document.getElementById("chat-history");
+  const userInput = document.getElementById("user-input");
+  const sendBtn = document.getElementById("send-btn");
+
+  async function sendMessage() {
+    const message = userInput.value.trim();
+    if (message === "") return;
+
+    addMessage("Vous", message);
+    userInput.value = "";
+
+    try {
+      const response = await fetch("https://TON-BACKEND.onrender.com/chat.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message })
+      });
+
+      const data = await response.json();
+      const botReply = data.choices[0].message.content;
+      addMessage("IA", botReply);
+    } catch (error) {
+      addMessage("IA", "❌ Erreur de connexion au serveur.");
+      console.error(error);
+    }
+  }
+
+  function addMessage(sender, text) {
+    const msg = document.createElement("div");
+    msg.innerHTML = `<strong>${sender}:</strong> ${text}`;
+    chatHistory.appendChild(msg);
+    chatHistory.scrollTop = chatHistory.scrollHeight;
+  }
+
+  sendBtn.addEventListener("click", sendMessage);
+  userInput.addEventListener("keypress", function (e) {
+    if (e.key === "Enter") sendMessage();
+  });
+</script>
+
 
         
 
@@ -226,7 +276,7 @@
                 <div class="max-w-5xl mx-auto">
                     <div class="text-center mb-12">
                         <div class="inline-block mb-3">
-                            <div class="text-xs text-cyan-400 tracking-widest uppercase mb-1">Get In Touch</div>
+                            <div class="text-xs text-cyan-400 tracking-widest uppercase mb-1"></div>
                             <div class="text-4xl md:text-5xl font-bold bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent">Contact Us</div>
                         </div>
                         <div class="w-20 h-1 bg-gradient-to-r from-cyan-500 to-indigo-500 mx-auto"></div>
